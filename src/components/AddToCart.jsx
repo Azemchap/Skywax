@@ -5,62 +5,50 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useRouter } from 'next/navigation'
 import { addToCart } from '../redux/slices/cartSlice'
 import { ArrowRightIcon } from '@heroicons/react/outline'
+import Link from 'next/link'
+import { ArrowLeftIcon } from '@heroicons/react/solid'
+import { FaWhatsapp } from 'react-icons/fa6'
 
 
 export default function AddToCart({
   item,
   redirect = true,
-  increasePerClick = false,
 }) {
   const dispatch = useDispatch()
 
   // const { cartItems } = useSelector((state) => state.cart)
   const router = useRouter()
   const [qty, setQty] = useState(1)
-  const [length, setLength] = useState(1)
 
   const addToCartHandler = () => {
-    let newQty = qty
-    let newLength = length
-    // if (increasePerClick) {
-    //   const existItem = cartItems.find((x) => x.id === item.id)
-    //   if (existItem) {
-    //     if (existItem.qty + 1 <= plan.countInStock) {
-    //       newQty = existItem.qty + 1
-    //     } else {
-    //       return alert('No more items exist')
-    //     }
-    //   }
-    // }
-    dispatch(addToCart({ ...item, qty: newQty, length: newLength }))
 
+    dispatch(addToCart({ ...item, qty }))
     if (redirect) router.push('/cart')
   }
 
   return (
     <>
-      {item.stocked === true ? (
+      {item.countInStock > 0 ? (
         <>
           <div className="flex gap-4 my-6 items-start">
             <div className="flex flex-col gap-2 ">
-              <label htmlFor="length">Length</label>
-              <input type='number' name="length" placeholder="1 yard" id="length"
-                value={length}
-                onChange={(e) => setLength(Number(e.target.value))}
-                className="rounded-sm w-24 lg:w-40 max-w-full "
-              />
-            </div>
-            <div className="flex flex-col gap-2 ">
-              <label htmlFor="length">Quantity</label>
-              <input type='number' name="length" placeholder="1 yard" id="length"
+              <label htmlFor="qty">Quantity</label>
+              <select className="rounded-sm sm:w-40 w-40"
                 value={qty}
-                onChange={(e) => setQty(Number(e.target.value))} className="rounded-sm w-24 lg:w-40 max-w-full "
-              />
+                onChange={(e) => setQty(Number(e.target.value))}
+              >
+                {[...Array(item.countInStock).keys()].map((x) => (
+                  <option key={x + 1} value={x + 1}>
+                    {x + 1}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
 
           <aside className="bg-gray-200 text-sm font-light border border-gray-300 lg:w-1/2 max-w-full p-4 mb-8">
-            For example: If you want to order 1 piece ( 3 yard continues), Select Yard: 1, and select Quantity: 3. (You will receive 1 piece of 274 cm). (Each yard equals 91cm)
+            For example: If you want to order 1 piece (3 yard continues), select Quantity (1). You will receive 1 piece of 274cm (each yard equals 91cm). Contact us through  <Link href="https://wa.me/+237654352368" className='inline-block mx-1'> <span className='hover:text-[#dc7028] underline flex gap-1  items-center underline-offset-2'><FaWhatsapp />  Whatsapp </span>
+            </Link> for more specifications on your orders.
           </aside>
 
           <h2>
@@ -74,9 +62,12 @@ export default function AddToCart({
           </button>
         </>
       ) : (
-        <h4 className="bg-red-100 p-4 my-4 py-8 text-center text-red-500 font-medium">
-          Out of stock
-        </h4>
+        <>
+          <h4 className="bg-red-100 p-4 my-4 py-8 text-center text-red-500 font-medium">
+            Out of stock
+          </h4>
+          <Link className=' underline flex gap-2 text-green-600 text-sm' href="/"><ArrowLeftIcon className='w-3' /> Shop other products</Link>
+        </>
 
       )}
     </>

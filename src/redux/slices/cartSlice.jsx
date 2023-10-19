@@ -30,11 +30,15 @@ const cartSlice = createSlice({
       } else {
         state.cartItems = [...state.cartItems, item]
       }
+
       state.itemsPrice = addDecimals(
-        state.cartItems.reduce((acc, item) => acc + item.price * item.qty * item.length, 0)
+        state.cartItems.reduce((acc, item) => acc + item.price * item.qty, 0)
       )
-      state.shippingPrice = addDecimals(state.itemsPrice > 100 ? 0 : 100)
-      state.taxPrice = addDecimals(Number(0.1 * state.itemsPrice))
+
+      // shipping price is 10 % of total price under 100,000 FCFA S
+
+      state.shippingPrice = addDecimals(state.itemsPrice > 100000 ? 0 : Number(0.1 * state.itemsPrice))
+      state.taxPrice = addDecimals(Number(0.15 * state.itemsPrice))
       state.totalPrice = addDecimals(
         Number(state.itemsPrice) +
         Number(state.shippingPrice) +
@@ -47,7 +51,7 @@ const cartSlice = createSlice({
       state.itemsPrice = addDecimals(
         state.cartItems.reduce((acc, item) => acc + item.price * item.qty, 0)
       )
-      state.shippingPrice = addDecimals(state.itemsPrice > 100 ? 0 : 100)
+      state.shippingPrice = addDecimals(state.itemsPrice > 100000 ? 0 : Number(0.1 * state.itemsPrice))
       state.taxPrice = addDecimals(Number(0.15 * state.itemsPrice))
       state.totalPrice = addDecimals(
         Number(state.itemsPrice) +

@@ -16,7 +16,7 @@ interface Props {
 
 const Breadcrumb = ({ pages, item }: Props) => {
     return (
-        <nav className="flex" aria-label="Breadcrumb">
+        <nav className="flex mb-4" aria-label="Breadcrumb">
             <ol role="list" className="flex items-start space-x-4">
                 <li>
                     <div>

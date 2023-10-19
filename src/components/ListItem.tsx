@@ -10,7 +10,6 @@ interface Props {
         product: string;
         name: string;
         price: string;
-        stocked: boolean;
         src: string;
         category: string;
         categoryLink: string;
@@ -20,6 +19,7 @@ interface Props {
         length: string;
         material: string;
         print: string;
+        countInStock: number;
     }
 }
 
@@ -47,11 +47,14 @@ const ListItem = ({ item }: Props) => {
                     </h1>
                 </div>
 
-                <p className="text-[#dc7028] mt-2 text-lg font-bold">
-                    FCFA {item.price} <span className="text-gray-400 font-light text-sm italic"> ( FCFA {item.price} per yard) + shipping</span>
-                </p>
+                <p className="mt-1 font-bold text-sm text-[#dc7028] ">
+                            <span className="text-xs font-light text-[#dc7028]">
+                              FCFA {' '}
+                            </span>
+                            {item.price} <span className="text-gray-400 font-light text-sm italic"> per piece + shipping</span>
+                          </p>
 
-                <AddToCart item={item} increasePerClick={false} redirect={true} />
+                <AddToCart item={item} redirect={true} />
 
                 <div className="border-t border-gray-200  text-gray-700 mt-8 pt-4">
                     <h2 className="text-lg font-semibold">

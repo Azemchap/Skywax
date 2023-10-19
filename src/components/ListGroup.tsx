@@ -8,6 +8,7 @@ interface Props {
         categoryLink: string
         price: string;
         stocked: boolean;
+        countInStock: number;
         name: string;
         src: string;
     }[];
@@ -30,18 +31,17 @@ const ListGroup = ({ items, heading }: Props) => {
                         key={item.id}
                         className="relative text-gray-60 cursor-pointer group  overflow-hidden"
                     >
-                        {item.stocked === true && (
+                        {item.countInStock > 0 ? (
                             <h2 className="absolute text-white text-xs rounded-sm p-2  right-0 text-center font-medium bg-[#f37a29]">
                                 New
                             </h2>
-                        )}
-                        {item.stocked === false && (
-                            <h2 className="absolute p-2 h-20 w-20  rounded-full flex items-center justify-center left-1/2 -translate-x-1/2 -translate-y-1/4 bottom-1/2 text-white text-xs text-center font-medium bg-[#f37a29] z-20 uppercase">
-                                Sold out
-                            </h2>
-                        )}
-                        {item.stocked === false && (
-                            <div className="absolute left-0 right-0 top-0 bottom-0 z-10 bg-[#fde9ce9c]"></div>
+                        ) : (
+                            <>
+                                <h2 className="absolute p-2 h-20 w-20  rounded-full flex items-center justify-center left-1/2 -translate-x-1/2 -translate-y-1/4 bottom-1/2 text-white text-xs text-center font-medium bg-[#f37a29] z-20 uppercase">
+                                    Sold out
+                                </h2>
+                                <div className="absolute left-0 right-0 top-0 bottom-0 z-10 bg-[#7272724f] rounded-md"></div>
+                            </>
                         )}
                         <Image
                             src={item.src}
@@ -53,8 +53,8 @@ const ListGroup = ({ items, heading }: Props) => {
                         />
                         <div className="my-4 text-center text-xs sm:text-sm p-2">
                             <p className=" mb-3">{item.name}</p>
-                            <p className=" text-[#dc7028]">
-                                <span className="font-bold">FCFA {item.price}</span> per yard
+                            <p className=" text-[#dc7028] font-bold text-base">
+                                <span className=" text-xs font-normal">FCFA </span>{item.price}
                             </p>
                         </div>
                     </Link>

@@ -17,9 +17,11 @@ export const data = {
                   description: ["High quality african wax print fabrics. These fabrics are perfect to create your own trendy fashion! African Wax Print Fabric, high quality African wax. Also know as Dutch wax print.", "African Print an exotic mixture of vibrant colors and traditional African Design. This fabric is 100% Graded Cotton: Real wax print.", "African Print fabrics can be used for skirts, dresses and tops, long dress, African wedding dresses & more!",
                   ],
                   width: '47 inch (118 cm)',
-                  length: "Length: 1 yard, up to 6 continuous yards per piece, please select your desired length ( eg. to buy 3 yard continuous, you can select 1 yard, and enter amount 3 )",
+                  length: "1 yard up to 6 continuous yards per piece",
                   material: '100% Cotton',
-                  print: 'Double sided, Colorfast print'
+                  countInStock: 50,
+                  print: 'Double sided, Colorfast print',
+
             },
             {
                   id: '2',
@@ -38,8 +40,9 @@ export const data = {
                   description: ["High quality african wax print fabrics. These fabrics are perfect to create your own trendy fashion! African Wax Print Fabric, high quality African wax. Also know as Dutch wax print.", "African Print an exotic mixture of vibrant colors and traditional African Design. This fabric is 100% Graded Cotton: Real wax print.", "African Print fabrics can be used for skirts, dresses and tops, long dress, African wedding dresses & more!",
                   ],
                   width: '47 inch (118 cm)',
-                  length: "Length: 1 yard, up to 6 continuous yards per piece, please select your desired length ( eg. to buy 3 yard continuous, you can select 1 yard, and enter amount 3 )",
+                  length: "1 yard up to 6 continuous yards per piece",
                   material: '100% Cotton',
+                  countInStock: 200,
                   print: 'Double sided, Colorfast print'
             },
             {
@@ -59,8 +62,9 @@ export const data = {
                   description: ["High quality african wax print fabrics. These fabrics are perfect to create your own trendy fashion! African Wax Print Fabric, high quality African wax. Also know as Dutch wax print.", "African Print an exotic mixture of vibrant colors and traditional African Design. This fabric is 100% Graded Cotton: Real wax print.", "African Print fabrics can be used for skirts, dresses and tops, long dress, African wedding dresses & more!",
                   ],
                   width: '47 inch (118 cm)',
-                  length: "Length: 1 yard, up to 6 continuous yards per piece, please select your desired length ( eg. to buy 3 yard continuous, you can select 1 yard, and enter amount 3 )",
+                  length: "1 yard up to 6 continuous yards per piece",
                   material: '100% Cotton',
+                  countInStock: 80,
                   print: 'Double sided, Colorfast print'
             },
             {
@@ -80,8 +84,9 @@ export const data = {
                   description: ["High quality african wax print fabrics. These fabrics are perfect to create your own trendy fashion! African Wax Print Fabric, high quality African wax. Also know as Dutch wax print.", "African Print an exotic mixture of vibrant colors and traditional African Design. This fabric is 100% Graded Cotton: Real wax print.", "African Print fabrics can be used for skirts, dresses and tops, long dress, African wedding dresses & more!",
                   ],
                   width: '47 inch (118 cm)',
-                  length: "Length: 1 yard, up to 6 continuous yards per piece, please select your desired length ( eg. to buy 3 yard continuous, you can select 1 yard, and enter amount 3 )",
+                  length: "1 yard up to 6 continuous yards per piece",
                   material: '100% Cotton',
+                  countInStock: 40,
                   print: 'Double sided, Colorfast print'
             },
             {
@@ -101,8 +106,9 @@ export const data = {
                   description: ["High quality african wax print fabrics. These fabrics are perfect to create your own trendy fashion! African Wax Print Fabric, high quality African wax. Also know as Dutch wax print.", "African Print an exotic mixture of vibrant colors and traditional African Design. This fabric is 100% Graded Cotton: Real wax print.", "African Print fabrics can be used for skirts, dresses and tops, long dress, African wedding dresses & more!",
                   ],
                   width: '47 inch (118 cm)',
-                  length: "Length: 1 yard, up to 6 continuous yards per piece, please select your desired length ( eg. to buy 3 yard continuous, you can select 1 yard, and enter amount 3 )",
+                  length: "1 yard up to 6 continuous yards per piece",
                   material: '100% Cotton',
+                  countInStock: 0,
                   print: 'Double sided, Colorfast print'
             },
       ],

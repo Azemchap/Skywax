@@ -196,7 +196,7 @@ export default function ShippingAddressPage() {
           </p>
 
           <div className="my-8 flex justify-between">
-            <button className="my-2 w-full group rounded-sm text-sm bg-[#dc7028]  p-3 text-white tracking-wider uppercase">Next</button>
+            <button className="my-2 w-full group rounded-sm text-sm bg-[#dc7028]  p-3 text-white tracking-wider uppercase">Save address</button>
           </div>
         </form>
       </div>

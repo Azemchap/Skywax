@@ -75,7 +75,7 @@ export default function PlaceOrderScreen() {
               <div className="p-4 rounded bg-gray-100">
                 <div className='flex items-center justify-between mb-4'>
                   <h2 className="text-lg font-bold">Shipping Address</h2>
-                  <Link className="flex items-center text-sm gap-2 border p-2 py-1 rounded" href="/shipping">
+                  <Link className="flex items-center text-sm gap-2 border border-[#dc702844] p-2 py-1 rounded text-[#dc7028] " href="/shipping">
                     <FaPencil /> Edit
                   </Link>
                 </div>
@@ -112,7 +112,7 @@ export default function PlaceOrderScreen() {
               <div className="p-4 mt-8 rounded shadow-lg bg-gray-100">
                 <div className='flex items-center justify-between mb-4'>
                   <h2 className="text-lg font-bold">Cart Items</h2>
-                  <Link className="flex items-center text-sm gap-2 border p-2 py-1 rounded" href="/cart">
+                  <Link className="flex items-center text-sm gap-2 border border-[#dc702844] p-2 py-1 rounded text-[#dc7028]" href="/cart">
                     <FaPencil /> Edit
                   </Link>
                 </div>
@@ -131,17 +131,22 @@ export default function PlaceOrderScreen() {
                           className="w-20"
                         ></Image>
                       </Link>
-                      <div className="flex flex-col gap-4 items-start">
+                      <div className="flex flex-col gap-2 items-start">
                         <Link
                           href={`/${item.categoryLink}/${item.id}`}
                           className='lg:text-base'>{item.name}
                         </Link>
                         <div className="flex items-center justify-between gap-4">
-                          <div className=""><span className="text-xs font-normal ml-2 text-gray-700">
-                            Qty : </span><span className='font-bold'>{item.qty}</span> </div>
-                          <div className="">
-                            <span className="text-xs font-normal ml-2 text-gray-700">
-                              FCFA{" "}</span><span className='font-bold'>{item.qty * item.price}</span>
+                          <div className=""><span className="text-xs font-normal text-gray-700">
+                            Quantity : </span><span className='font-bold text-[#dc7028]'>{item.qty}</span> </div>
+                          
+                          <div className="text-gray-600"> Price :
+                            <span className="text-xs font-normal ml-2 text-[#dc7028]">
+                             FCFA{" "}</span><span className='font-bold text-[#dc7028]'>{item.price}</span>
+                          </div>
+                          <div className="text-gray-600">Subtotal :
+                            <span className="text-xs font-normal ml-2 text-[#dc7028]">
+                             FCFA{" "}</span><span className='font-bold text-[#dc7028]'>{item.qty * item.price}</span>
                           </div>
                         </div>
                       </div>

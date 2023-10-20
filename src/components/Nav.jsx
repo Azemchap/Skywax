@@ -127,7 +127,7 @@ export default function Nav() {
                             </Link>
                         </div>
                         <Link href={'/cart'} className="flex gap-2 items-center">
-                            <FaCartShopping />   <span className="text-sm font-bold text-gray-100 group-hover:text-gray-400">
+                            <FaCartShopping />   <span className="text-xs font-bold text-gray-100 group-hover:text-gray-400 p-1 rounded px-2 bg-[#dc7028]">
                                 {loading ? "..." : cartItems.reduce((a, c) => a + c.qty, 0)}
                             </span>
                         </Link>

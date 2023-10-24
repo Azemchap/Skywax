@@ -48,11 +48,11 @@ const ListItem = ({ item }: Props) => {
                 </div>
 
                 <p className="mt-1 font-bold text-sm text-[#dc7028] ">
-                            <span className="text-xs font-light text-[#dc7028]">
-                              FCFA {' '}
-                            </span>
-                            {item.price} <span className="text-gray-400 font-light text-sm italic"> per piece + shipping</span>
-                          </p>
+                    <span className="text-xs font-light text-[#dc7028]">
+                        FCFA {' '}
+                    </span>
+                    {item.price} <span className="text-gray-400 font-light text-sm italic"> per piece + shipping</span>
+                </p>
 
                 <AddToCart item={item} redirect={true} />
 

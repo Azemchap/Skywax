@@ -40,7 +40,7 @@ const ListGroup = ({ items, heading }: Props) => {
                                 <h2 className="absolute p-2 h-20 w-20  rounded-full flex items-center justify-center left-1/2 -translate-x-1/2 -translate-y-1/4 bottom-1/2 text-white text-xs text-center font-medium bg-[#f37a29] z-20 uppercase">
                                     Sold out
                                 </h2>
-                                <div className="absolute left-0 right-0 top-0 bottom-0 z-10 bg-[#7272724f] rounded-md"></div>
+                                <div className="absolute left-0 right-0 top-0 bottom-0 z-10 bg-[#160a03c2] rounded-md"></div>
                             </>
                         )}
                         <Image

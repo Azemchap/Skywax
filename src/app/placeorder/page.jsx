@@ -108,7 +108,6 @@ export default function PlaceOrderScreen() {
                 </div>
               </div>
 
-
               <div className="p-4 mt-8 rounded shadow-lg bg-gray-100">
                 <div className='flex items-center justify-between mb-4'>
                   <h2 className="text-lg font-bold">Cart Items</h2>
@@ -128,25 +127,25 @@ export default function PlaceOrderScreen() {
                           alt={item.name}
                           width={200}
                           height={200}
-                          className="w-20"
+                          className="w-16"
                         ></Image>
                       </Link>
-                      <div className="flex flex-col gap-2 items-start">
+                      <div className="flex flex-col gap-2 items-start text-gray-700">
                         <Link
                           href={`/${item.categoryLink}/${item.id}`}
-                          className='lg:text-base'>{item.name}
+                          className='lg:text-base font-bold'>{item.name}
                         </Link>
-                        <div className="flex items-center justify-between gap-4">
-                          <div className=""><span className="text-xs font-normal text-gray-700">
-                            Quantity : </span><span className='font-bold text-[#dc7028]'>{item.qty}</span> </div>
-                          
-                          <div className="text-gray-600"> Price :
-                            <span className="text-xs font-normal ml-2 text-[#dc7028]">
-                             FCFA{" "}</span><span className='font-bold text-[#dc7028]'>{item.price}</span>
+                        <div className="flex items-center  gap-4 gap-y-1 flex-wrap">
+                          <div className=""><span className="text-xs font-normal">
+                            Quantity : </span><span className='font-bold '>{item.qty}</span> </div>
+
+                          <div className="text-gray-700"> Price :
+                            <span className="text-xs font-normal ml-2 ">
+                              FCFA{" "}</span><span className='font-bold '>{item.price}</span>
                           </div>
-                          <div className="text-gray-600">Subtotal :
-                            <span className="text-xs font-normal ml-2 text-[#dc7028]">
-                             FCFA{" "}</span><span className='font-bold text-[#dc7028]'>{item.qty * item.price}</span>
+                          <div className="text-gray-700">Subtotal :
+                            <span className="text-xs font-normal ml-2 ">
+                              FCFA{" "}</span><span className='font-bold '>{item.qty * item.price}</span>
                           </div>
                         </div>
                       </div>
@@ -154,7 +153,6 @@ export default function PlaceOrderScreen() {
                   ))}
                 </div>
               </div>
-              
             </div>
 
             <section

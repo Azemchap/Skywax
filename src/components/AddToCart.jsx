@@ -15,19 +15,17 @@ export default function AddToCart({
   redirect = true,
 }) {
   const dispatch = useDispatch()
-
   // const { cartItems } = useSelector((state) => state.cart)
   const router = useRouter()
   const [qty, setQty] = useState(1)
 
   const addToCartHandler = () => {
-
     dispatch(addToCart({ ...item, qty }))
     if (redirect) router.push('/cart')
   }
 
   return (
-    <>
+    <div>
       {item.countInStock > 0 ? (
         <>
           <div className="flex gap-4 my-6 items-start">
@@ -70,6 +68,6 @@ export default function AddToCart({
         </>
 
       )}
-    </>
+    </div>
   )
 }

@@ -1,14 +1,20 @@
 /* eslint-disable react/no-unescaped-entities */
+
+'use client'
+
 import React from 'react'
 import { PhoneIcon, MailIcon, LocationMarkerIcon } from '@heroicons/react/outline'
 import Breadcrumb from '../../components/Breadcrumb'
 import Link from 'next/link'
 import { FaWhatsapp } from 'react-icons/fa6'
+import { sendEmail } from '../../actions/sendEmail'
+import SubmitBtn from '../../components/SubmitBtn'
 
 
 
 /* This example requires Tailwind CSS v2.0+ */
 export default function ContactPage() {
+
     const pages = [
         { id: '1', current: true },
     ]
@@ -26,16 +32,15 @@ export default function ContactPage() {
 
                 <div className="text-center">
                     <h2 className="text-base font-semibold text-[#e7803b] tracking-wide ">Contact us</h2>
-                    <p className="mt-1 text-2.
-                    z-0 font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-4xl">
+                    <p className="mt-1 z-0 font-extrabold text-gray-900 sm:text-xl sm:tracking-tight lg:text-2xl">
                         We'd love to hear from you.
                     </p>
-                    <p className="max-w-xl my-5 mx-auto text-xl text-gray-500">
+                    <p className="max-w-xl my-5 mx-auto text-sm mb-4 lg:text-lg text-gray-500">
                         We are always ready to listen to you, analyze your queries and give you feedback within the shortest time possible.
                     </p>
                 </div>
-                <div className="relative max-w-7xl mx-auto lg:grid lg:grid-cols-5">
-                    <div className="bg-gray-50  p-4 sm:px-6 lg:col-span-2 lg:px-8 xl:pr-12">
+                <div className="relative max-w-7xl mx-auto lg:grid lg:grid-cols-6">
+                    <div className="bg-gray-50  p-4 sm:px-6 lg:col-span-3 lg:px-8 xl:pr-12">
                         <div className="max-w-lg mx-auto">
                             <h2 className="text-2xl font-extrabold tracking-tight text-[#dc7028] sm:text-3xl text-center lg:text-left">Get in touch</h2>
                             <p className="mt-1 text-center lg:text-left text-base leading-6 text-gray-500">
@@ -80,20 +85,28 @@ export default function ContactPage() {
                             </dl>
                         </div>
                     </div>
+
+
+
+                    {/* Form  */}
                     <div className="bg-white py-8 px-4 sm:px-6 lg:col-span-3 lg:px-8 xl:pl-12">
                         <div className="max-w-lg mx-auto lg:max-w-none">
-                            <form action="#" method="POST" className="grid grid-cols-1 gap-y-6">
+
+                            <form action={async (formData) => { 
+                                await sendEmail(formData) }}
+                                 className="grid grid-cols-1 gap-y-6">
                                 <div>
-                                    <label htmlFor="full-name" className="sr-only">
+                                    <label htmlFor="username" className="sr-only">
                                         Full name
                                     </label>
                                     <input
                                         type="text"
-                                        name="full-name"
-                                        id="full-name"
-                                        autoComplete="name"
+                                        name="username"
+                                        id="username"
+                                        autoComplete="username"
                                         className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                                         placeholder="Full name"
+                                        required
                                     />
                                 </div>
                                 <div>
@@ -107,19 +120,8 @@ export default function ContactPage() {
                                         autoComplete="email"
                                         className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                                         placeholder="Email"
-                                    />
-                                </div>
-                                <div>
-                                    <label htmlFor="phone" className="sr-only">
-                                        Phone
-                                    </label>
-                                    <input
-                                        type="text"
-                                        name="phone"
-                                        id="phone"
-                                        autoComplete="tel"
-                                        className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
-                                        placeholder="Phone"
+                                        maxLength={500}
+                                        required
                                     />
                                 </div>
                                 <div>
@@ -133,15 +135,12 @@ export default function ContactPage() {
                                         className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md"
                                         placeholder="Message"
                                         defaultValue={''}
+                                        maxLength={2000}
+                                        required
                                     />
                                 </div>
                                 <div>
-                                    <button
-                                        type="submit"
-                                        className="inline-flex w-full justify-center py-3 px-6 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-[#e7803b] hover:bg-[#e7803b] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#e7803b] cursor-pointer"
-                                    >
-                                        Submit
-                                    </button>
+                                   <SubmitBtn />
                                 </div>
                             </form>
                         </div>

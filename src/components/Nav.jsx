@@ -39,8 +39,8 @@ export default function Nav() {
             },
             {
                 id: '6',
-                href: '/gift-ideas',
-                name: '🎁 GIFT IDEAS'
+                href: '/contact',
+                name: 'Contact Us'
             },
         ]
     }

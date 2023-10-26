@@ -69,13 +69,16 @@ export default function ContactPage() {
                                     </dd>
                                 </div>
 
-                                {/* <div className="mt-3">
+                                <div className="mt-3">
                                     <dt className="sr-only">Email</dt>
                                     <dd className="flex">
-                                        <MailIcon className="flex-shrink-0 h-6 w-6 text-gray-400" aria-hidden="true" />
-                                        <span className="ml-3">histbamtc@gmail.com</span>
+                                        <Link rel="noopener" target="_blank" href="mailto:azemchap@gmail.com" className='flex items-center'>
+                                            <MailIcon className="flex-shrink-0 h-6 w-6 text-gray-400" aria-hidden="true" />
+                                            <span className="ml-3">Send us a mail</span>
+                                        </Link>
                                     </dd>
-                                </div> */}
+                                </div>
+
                                 <div className="mt-3">
                                     <dt className="sr-only">Address</dt>
                                     <dd className="flex">
@@ -95,12 +98,10 @@ export default function ContactPage() {
 
                             <form action={async (formData) => {
                                 const { data, error } = await sendEmail(formData)
-
                                 if (error) {
                                     toast.error(error);
                                     return
                                 }
-
                                 toast.success('Email sent successfully')
                             }}
                                 className="grid grid-cols-1 gap-y-6">

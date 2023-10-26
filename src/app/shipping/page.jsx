@@ -55,9 +55,10 @@ export default function ShippingAddressPage() {
 
         <h1 className="text-xl font-extrabold text-center tracking-wide text-gray-900 sm:text-4xl my-4">Shipping Address</h1>
 
+
+        {/* Shipping Form Data  */}
         <form onSubmit={handleSubmit(submitHandler)} className="mt-8 max-w-lg mx-auto">
           <div className="grid grid-cols-12 gap-y-6 gap-x-4">
-
             <div className="col-span-full">
               <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">
                 Full names
@@ -201,6 +202,5 @@ export default function ShippingAddressPage() {
         </form>
       </div>
     </div>
-
   )
 }

@@ -40,21 +40,20 @@ export default function ContactPage() {
                         We are always ready to listen to you, analyze your queries and give you feedback within the shortest time possible.
                     </p>
                 </div>
-                <div className="relative max-w-7xl mx-auto lg:grid lg:grid-cols-6">
-                    <div className="bg-gray-50  p-4 sm:px-6 lg:col-span-3 lg:px-8 xl:pr-12">
+                <div className="relative max-w-7xl my-8 mx-auto lg:grid lg:grid-cols-6">
+                    <div className="bg-gray-50 rounded-lg  p-4 sm:px-6 lg:col-span-3 lg:px-8 xl:pr-12">
                         <div className="max-w-lg mx-auto">
                             <h2 className="text-2xl font-extrabold tracking-tight text-[#dc7028] sm:text-3xl text-center lg:text-left">Get in touch</h2>
                             <p className="mt-1 text-center lg:text-left text-base leading-6 text-gray-500">
                                 For any inquiries, please feel free to contact us.
                             </p>
                             <dl className="mt-8 text-base text-gray-500 ">
-
                                 <div className="mt-3">
                                     <dt className="sr-only">Whatsapp number</dt>
                                     <dd className="flex">
                                         <Link rel="noopener" target="_blank" href="https://wa.me/+8615868979611" className='flex items-center'>
                                             <FaWhatsapp className="flex-shrink-0 h-6 w-6 text-gray-400" aria-hidden="true" />
-                                            <span className="ml-3">Whatsapp</span>
+                                            <span className="ml-3">Chat on Whatsapp</span>
                                         </Link>
                                     </dd>
                                 </div>
@@ -64,7 +63,7 @@ export default function ContactPage() {
                                     <dd className="flex">
                                         <Link rel="noopener" target="_blank" href="tel:+8615868979611" className='flex items-center'>
                                             <PhoneIcon className="flex-shrink-0 h-6 w-6 text-gray-400" aria-hidden="true" />
-                                            <span className="ml-3">+86 15868979611</span>
+                                            <span className="ml-3">(+86) 15868979611</span>
                                         </Link>
                                     </dd>
                                 </div>
@@ -74,7 +73,7 @@ export default function ContactPage() {
                                     <dd className="flex">
                                         <Link rel="noopener" target="_blank" href="mailto:azemchap@gmail.com" className='flex items-center'>
                                             <MailIcon className="flex-shrink-0 h-6 w-6 text-gray-400" aria-hidden="true" />
-                                            <span className="ml-3">Send us a mail</span>
+                                            <span className="ml-3">Send an email</span>
                                         </Link>
                                     </dd>
                                 </div>
@@ -90,14 +89,12 @@ export default function ContactPage() {
                         </div>
                     </div>
 
-
-
                     {/* Form  */}
                     <div className="bg-white py-8 px-4 sm:px-6 lg:col-span-3 lg:px-8 xl:pl-12">
                         <div className="max-w-lg mx-auto lg:max-w-none">
 
                             <form action={async (formData) => {
-                                const { data, error } = await sendEmail(formData)
+                                const { error } = await sendEmail(formData)
                                 if (error) {
                                     toast.error(error);
                                     return

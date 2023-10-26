@@ -17,14 +17,14 @@ interface Props {
 
 const ListGroup = ({ items, heading }: Props) => {
     return (
-        <div className="max-w-screen-2xl mx-auto mt-4 mb-24">
+        <div className="max-w-screen-2xl mx-auto xl:px-8 mt-4 mb-24">
             <h2 className="py-4 my-4 text-lg font-semibold">{heading}</h2>
             {items.length === 0 && (
                 <h2 className="p-2 py-12 text-center bg-red-50 w-full">
                     No product Found..
                 </h2>
             )}
-            <div className=" grid gap-8 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+            <div className=" grid gap-8 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
                 {items.map((item) => (
                     <Link
                         href={`/${item.categoryLink}/${item.id}`}
@@ -40,7 +40,7 @@ const ListGroup = ({ items, heading }: Props) => {
                                 <h2 className="absolute p-2 h-20 w-20  rounded-full flex items-center justify-center left-1/2 -translate-x-1/2 -translate-y-1/4 bottom-1/2 text-white text-xs text-center font-medium bg-[#f37a29] z-20 uppercase">
                                     Sold out
                                 </h2>
-                                <div className="absolute left-0 right-0 top-0 bottom-0 z-10 bg-[#160a03c2] rounded-md"></div>
+                                <div className="absolute left-0 right-0 top-0 bottom-0 z-10 bg-[#05050562] rounded-md"></div>
                             </>
                         )}
                         <Image

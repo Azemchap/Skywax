@@ -1,9 +1,12 @@
+'use client'
+
 import React from 'react'
-import { FaPaperPlane } from 'react-icons/fa6'
-import { experimental_useFormStatus as useFormStatus } from "react-dom"
+import { FaPaperPlane } from 'react-icons/fa6' 
+import { experimental_useFormStatus as useFormStatus } from 'react-dom'
+ 
 
 const SubmitBtn = () => {
-  const { pending } = useFormStatus();
+  const { pending } = useFormStatus()
 
   return (
     <>

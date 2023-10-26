@@ -5,13 +5,15 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { Resend } from 'resend'
 import Breadcrumb from "../../components/Breadcrumb";
 import Loading from '../../components/Loading'
 import { FaPencil } from 'react-icons/fa6'
+import toast from 'react-hot-toast'
+import { Resend } from 'resend'
 
 
 export default function PlaceOrderScreen() {
+
   const {
     cartItems,
     itemsPrice,
@@ -22,8 +24,12 @@ export default function PlaceOrderScreen() {
     loading,
   } = useSelector((state) => state.cart)
 
+  const cartItemQty = cartItems.reduce((a, c) => a + c.qty, 0)
+
+
 
   const router = useRouter()
+
 
   useEffect(() => {
     if (!shippingAddress.address) {
@@ -31,17 +37,35 @@ export default function PlaceOrderScreen() {
     }
   }, [shippingAddress, router])
 
-  const completePurchase = () => {
-    const resend = new Resend('re_6AskpBLE_6NKnGrSvVpkDARTYUurTFn4q')
+
+
+  const SendOrder = () => {
+    const resend = new Resend(process.env.RESEND_API_KEY)
+
+    const {
+      cartItems,
+      itemsPrice,
+      shippingPrice,
+      totalPrice,
+      taxPrice,
+      shippingAddress,
+    } = useSelector((state) => state.cart)
+
+    const cartItemQty = cartItems.reduce((a, c) => a + c.qty, 0)
 
     resend.emails.send({
-      from: 'onboarding@resend.dev',
+
+      from: "My Website - Contact Form <onboarding@resend.dev> ",
+      // to: 'nodemdivine5@gmail.com',
       to: 'azemchap@gmail.com',
-      subject: 'Hello World',
-      html: '<p>Congrats on sending your <strong>second email</strong>!</p>'
+      reply_to: shippingAddress.address,
+      subject: `New Order from ${shippingAddress.fullName} `,
+      // react: <ContactForm message={message as string} username={username as string} email={email as string} />,
+      html: `Congrats, you have order ${cartItemQty} items `
     });
 
     if (resend.emails.send) {
+
       router.push('/success')
     }
   }
@@ -66,6 +90,8 @@ export default function PlaceOrderScreen() {
         />
 
         <h1 className="text-xl font-extrabold text-center tracking-wide text-gray-900 sm:text-4xl my-8">Complete Order</h1>
+
+        {/* <p>{cartItems}</p> */}
 
         {loading ? (
           <Loading />
@@ -166,9 +192,9 @@ export default function PlaceOrderScreen() {
               <dl className="my-6 space-y-4">
                 <div className="flex items-center justify-between">
                   <dt className="text-md text-gray-600"> (
-                    {cartItems.reduce((a, c) => a + c.qty, 0) > 1
-                      ? cartItems.reduce((a, c) => a + c.qty, 0) + " items"
-                      : cartItems.reduce((a, c) => a + c.qty, 0) + " item"}
+                    {cartItemQty > 1
+                      ? cartItemQty + " items"
+                      : cartItemQty + " item"}
                     )</dt>
                   <div className="text-base font-bold text-gray-900 ">
                     <span className="text-xs font-normal ml-2 text-gray-700">
@@ -214,8 +240,15 @@ export default function PlaceOrderScreen() {
               </dl>
 
               <button
-                onClick={() => completePurchase()}
+                onClick={async () => {
+                  SendOrder()
+                  if (error) {
+                    toast.error(error);
+                    return
+                  }
+                }}
                 className="my-2 w-full group rounded-sm text-sm bg-[#dc7028]  p-3 text-white tracking-wider uppercase"
+                type='submit'
               >
                 Complete order
               </button>

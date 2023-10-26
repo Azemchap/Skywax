@@ -42,6 +42,11 @@ export default function Nav() {
                 href: '/contact',
                 name: 'Contact Us'
             },
+            {
+                id: '6',
+                href: '/about',
+                name: 'About Us'
+            },
         ]
     }
 
@@ -97,8 +102,8 @@ export default function Nav() {
                                         <Link onClick={() => setOpen(false)} className='-m-2 p-2 block text-gray-600 transition-all duration-200 ease-in-out hover:bg-[#dc7028] hover:text-white font-medium ' href={link.href}>{link.name}</Link>
                                     </div>
                                 ))}
-                                <div className="text-gray-700 bg-slate-100 rounded-md p-4 py-8 mt-60 flex gap-2 items-left justify-between text-sm">
-                                    <Link rel="noopener" target="_blank" href="tel:+237654352368"> <span className='hover:text-[#dc6128] underline underline-offset-2 flex gap-2  items-center'> <FaPhone /> Call us!</span>
+                                <div className="text-gray-700 bg-slate-100 rounded-md p-4 py-8 mt-60 flex gap-2 items-left justify-between font-normal text-sm">
+                                    <Link rel="noopener" target="_blank" href="tel:+237654352368"> <span className='hover:text-[#dc6128] underline underline-offset-2 flex gap-2  items-center'> <FaPhone /> Call us</span>
                                     </Link>
                                     <Link href="https://wa.me/+237654352368"> <span className='hover:text-[#dc7028] underline flex gap-1  items-center underline-offset-2'><FaWhatsapp />  Whatsapp </span>
                                     </Link>
@@ -114,19 +119,21 @@ export default function Nav() {
                 <div className="top-header  bg-gray-900 ">
                     <div className="max-w-screen-2xl mx-auto h-10 flex gap-8 md:gap-12 items-center  text-sm font-regular text-white px-8 ">
                         <h2 className='hidden lg:flex gap-1 mr-auto'> <span className='font-bold'>Welcome to SKYWAX! </span> We offer fast worldwide shipping. </h2>
-                        <div className="socials hidden sm:flex sm:ml-auto gap-4 items-center justify-between">
-                            <Link rel="noopener" target="_blank" href="tel:+8615868979611"> <span className='underline underline-offset-2 flex gap-2  items-center'> <FaPhone /> Place a call</span>
+
+
+                        <div className="flex sm:ml-auto gap-6 items-center justify-between">
+                            <Link rel="noopener" target="_blank" href="tel:+8615868979611"> <span className='underline underline-offset-2 flex gap-2  items-center'> <FaPhone /> Phone</span>
                             </Link>
                             <Link href="https://wa.me/+8615868979611"> <span className='underline flex gap-1  items-center underline-offset-2'><FaWhatsapp />  Whatsapp </span>
                             </Link>
                         </div>
-                        <div className="ml-auto flex gap-2 items-center justify-between">
+                        {/* <div className="ml-auto flex gap-2 items-center justify-between">
                             <Link href="/login"> <span className='  flex gap-2  items-center'> Login</span>
                             </Link> or
                             <Link href="/register"> <span className=' flex gap-1  items-center '> Register </span>
                             </Link>
-                        </div>
-                        <Link href={'/cart'} className="flex gap-2 items-center">
+                        </div> */}
+                        <Link href={'/cart'} className="flex gap-2 items-center ml-auto">
                             <FaCartShopping />   <span className="text-xs font-bold text-gray-100 group-hover:text-gray-400 p-1 rounded px-2 bg-[#dc7028]">
                                 {loading ? "..." : cartItems.reduce((a, c) => a + c.qty, 0)}
                             </span>

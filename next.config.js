@@ -30,7 +30,7 @@ const nextConfig = {
         // // when true, every image will be unoptimized
         // unoptimized: false,
     },
-    experimental:{
+    experimental: {
         serverActions: true,
     }
 }

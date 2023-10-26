@@ -2,6 +2,7 @@
 import { Resend } from 'resend'
 import { getErrorMessage, validString } from '../lib/utils';
 import ContactForm from '../email/contactForm';
+import { CreateEmailResponse } from 'resend/build/src/emails/interfaces';
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
@@ -19,14 +20,15 @@ export const sendEmail = async (formData: FormData) => {
         return { error: 'Invalid message' }
     }
 
+    let data: CreateEmailResponse;
+
     try {
-        await resend.emails.send({
+        data = await resend.emails.send({
             from: "My Website - Contact Form <onboarding@resend.dev> ",
             // to: 'nodemdivine5@gmail.com',
             to: 'azemchap@gmail.com',
             reply_to: email as string,
             subject: `New Order from ${username} `,
-            // text: `${username} has placed an order. ${message}`
             react: <ContactForm message={message as string} username={username as string} email={email as string} />
         })
     } catch (error: unknown) {
@@ -34,4 +36,6 @@ export const sendEmail = async (formData: FormData) => {
             error: getErrorMessage(error)
         }
     }
+
+    return { data }
 }

@@ -3,6 +3,7 @@ import App from '../components/App'
 import { StoreProvider } from '../redux/StoreProvider'
 import './globals.css'
 import localFont from 'next/font/local'
+import { Toaster } from 'react-hot-toast'
 
 
 // Font files can be co-located inside of `app`
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
         <StoreProvider>
           <App>
             {children}
+            <Toaster position='top-right' />
           </App>
         </StoreProvider>
       </body>

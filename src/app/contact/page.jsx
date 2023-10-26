@@ -9,6 +9,7 @@ import Link from 'next/link'
 import { FaWhatsapp } from 'react-icons/fa6'
 import { sendEmail } from '../../actions/sendEmail'
 import SubmitBtn from '../../components/SubmitBtn'
+import toast from 'react-hot-toast'
 
 
 
@@ -92,9 +93,17 @@ export default function ContactPage() {
                     <div className="bg-white py-8 px-4 sm:px-6 lg:col-span-3 lg:px-8 xl:pl-12">
                         <div className="max-w-lg mx-auto lg:max-w-none">
 
-                            <form action={async (formData) => { 
-                                await sendEmail(formData) }}
-                                 className="grid grid-cols-1 gap-y-6">
+                            <form action={async (formData) => {
+                                const { data, error } = await sendEmail(formData)
+
+                                if (error) {
+                                    toast.error(error);
+                                    return
+                                }
+
+                                toast.success('Email sent successfully')
+                            }}
+                                className="grid grid-cols-1 gap-y-6">
                                 <div>
                                     <label htmlFor="username" className="sr-only">
                                         Full name
@@ -140,7 +149,7 @@ export default function ContactPage() {
                                     />
                                 </div>
                                 <div>
-                                   <SubmitBtn />
+                                    <SubmitBtn />
                                 </div>
                             </form>
                         </div>

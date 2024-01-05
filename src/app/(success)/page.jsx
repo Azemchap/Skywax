@@ -9,14 +9,11 @@ import Link from 'next/link'
 import React from 'react'
 
 
-
 export default function SuccessPage() {
     const router = useRouter()
     const dispatch = useDispatch()
 
-
     dispatch(clearCart())
-
 
     const goToItems = () => {
         return router.push('/')
@@ -39,7 +36,7 @@ export default function SuccessPage() {
                 />
 
                 <h1 className="text-3xl font-extrabold tracking-wide text-center  text-gray-900 sm:text-4xl mt-4 my-8">
-                    Order status
+                    Order Placed!
                 </h1>
 
                 <div className="max-w-lg m-auto rounded-lg p-4 shadow-xl transform transition-all my-8 ">
@@ -64,7 +61,7 @@ export default function SuccessPage() {
                             className="flex justify-center items-center gap-2 w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:text-sm"
                             onClick={() => goToItems()}
                         >
-                            <ArrowLeftIcon className="w-3" /> Go back to shopping
+                            <ArrowLeftIcon className="w-3" /> Back to shopping
                         </button>
                     </div>
                 </div>

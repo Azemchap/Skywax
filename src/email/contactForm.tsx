@@ -1,3 +1,5 @@
+// 'use client'
+
 import * as React from 'react';
 import {
   Body,
@@ -15,6 +17,7 @@ import {
   Text,
 } from '@react-email/components';
 import { Tailwind } from '@react-email/components';
+import { useSelector } from 'react-redux';
 
 type contactFormEmailProps = {
   message: string
@@ -23,6 +26,10 @@ type contactFormEmailProps = {
 }
 
 const ContactForm = ({ message, username, email,  }: contactFormEmailProps) => {
+
+
+
+
   return (
     <Html>
       <Head />
@@ -33,7 +40,7 @@ const ContactForm = ({ message, username, email,  }: contactFormEmailProps) => {
             <Heading>You received an order from {username}</Heading>
             <Hr />
             <Text>{message}</Text>
-            <Text>Order placed by {email}</Text>
+            <Text>Order placed by {email} </Text>
           </Container>
         </Body>
       </Tailwind>

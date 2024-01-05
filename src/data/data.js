@@ -92,7 +92,7 @@ export const data = {
             {
                   id: '5',
                   product: 'african-fabrics',
-                  name: "African Wax print fabric - Blue dotted patterns",
+                  name: "African Wax print  - Blue dotted patterns",
                   price: "4000",
                   stocked: true,
                   src: "/fabrics/msedge_vpPi5Zr4wK.jpg",

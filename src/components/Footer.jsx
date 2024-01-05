@@ -122,7 +122,7 @@ export default function Footer() {
                         </a>
                     ))}
                 </div>
-                <p className="mt-8 text-center text-sm text-gray-300">Copyright &copy; 2023, SKYWAX - All rights reserved.</p>
+                <p className="mt-8 text-center text-sm text-gray-300">Copyright &copy; {new Date().getFullYear()}, SKYWAX - All rights reserved.</p>
             </div>
         </footer>
     )

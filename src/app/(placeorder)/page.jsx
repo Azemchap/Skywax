@@ -12,6 +12,7 @@ import toast from 'react-hot-toast'
 import { Resend } from 'resend'
 
 
+
 export default function PlaceOrderScreen() {
 
   const {
@@ -26,10 +27,7 @@ export default function PlaceOrderScreen() {
 
   const cartItemQty = cartItems.reduce((a, c) => a + c.qty, 0)
 
-
-
   const router = useRouter()
-
 
   useEffect(() => {
     if (!shippingAddress.address) {
@@ -38,10 +36,7 @@ export default function PlaceOrderScreen() {
   }, [shippingAddress, router])
 
 
-
   const SendOrder = () => {
-    const resend = new Resend(process.env.RESEND_API_KEY)
-
     const {
       cartItems,
       itemsPrice,
@@ -51,24 +46,31 @@ export default function PlaceOrderScreen() {
       shippingAddress,
     } = useSelector((state) => state.cart)
 
-    const cartItemQty = cartItems.reduce((a, c) => a + c.qty, 0)
+    const cartItemQty = cartItems.reduce((a, c) => a + c.qty)
+
+    const resend = new Resend('re_KBRZKmk8_PnGAaUiuTqVtNEm17y7DgAU9')
+
+    console.log(shippingAddress.email);
+    console.log(cartItems);
+
 
     resend.emails.send({
-
       from: "My Website - Contact Form <onboarding@resend.dev> ",
       // to: 'nodemdivine5@gmail.com',
       to: 'azemchap@gmail.com',
       reply_to: shippingAddress.address,
       subject: `New Order from ${shippingAddress.fullName} `,
       // react: <ContactForm message={message as string} username={username as string} email={email as string} />,
-      html: `Congrats, you have order ${cartItemQty} items `
+      html: `${shippingAddress.email} has ordered ${cartItems} items`
     });
 
     if (resend.emails.send) {
-
-      router.push('/success')
+      toast.success('Your order has been placed successfully') 
+      // router.push('/success')
     }
   }
+
+  // SendOrder()
 
   const pages = [
     { id: '1', current: false },
@@ -85,7 +87,7 @@ export default function PlaceOrderScreen() {
             id: '1',
             category: "Shopping Cart",
             categoryLink: "cart",
-            name: "Complete order ",
+            name: "Complete order",
           }}
         />
 
@@ -108,7 +110,7 @@ export default function PlaceOrderScreen() {
 
                 <div className='text-sm text-gray-600'>
                   <div className='flex justify-between items-center py-2 border-b'>
-                    <div className="font-bold ">Fullname</div>
+                    <div className="font-bold ">Full-name</div>
                     <div className="name">{shippingAddress.fullName}</div>
                   </div>
                   <div className='flex justify-between items-center py-2 border-b'>
@@ -238,14 +240,9 @@ export default function PlaceOrderScreen() {
                   </dd>
                 </div>
               </dl>
-
               <button
-                onClick={async () => {
+                onClick={() => {
                   SendOrder()
-                  if (error) {
-                    toast.error(error);
-                    return
-                  }
                 }}
                 className="my-2 w-full group rounded-sm text-sm bg-[#dc7028]  p-3 text-white tracking-wider uppercase"
                 type='submit'

@@ -2,6 +2,8 @@
 import Image from 'next/image';
 import React from 'react'
 import AddToCart from './AddToCart'
+import Link from 'next/link';
+import { FaPhone, FaWhatsapp } from 'react-icons/fa6';
 
 
 interface Props {
@@ -30,8 +32,8 @@ const ListItem = ({ item }: Props) => {
             {/* item image */}
             <div className="lg:col-span-6">
                 <Image
-                    width={2400}
-                    height={2400}
+                    width={1200}
+                    height={1200}
                     src={item.src}
                     alt={item.name}
                     className="object-center w-full h-full max-h-96 object-contain"
@@ -56,6 +58,8 @@ const ListItem = ({ item }: Props) => {
 
                 <AddToCart item={item} redirect={true} />
 
+
+
                 <div className="border-t border-gray-200  text-gray-700 mt-8 pt-4">
                     <h2 className="text-lg font-semibold">
                         Description:
@@ -68,6 +72,23 @@ const ListItem = ({ item }: Props) => {
                             }
                         </p>
                     </div>
+
+                    <form className="mt-6">
+                        <div className="mt-10 flex gap-2 flex-col lg:flex-row">
+                            <Link href="https://wa.me/+237651327377 "
+                                className=" flex-1 bg-[#dc7028] border border-transparent rounded-md p-2 justify-center text-md font-medium text-white hover:bg-[#dc7028] focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-offset-gray-50 focus:ring-[#dc7028] sm:w-full flex gap-2 items-center"
+                            >
+                                <FaWhatsapp /> Chat on Whatsapp
+                            </Link>
+                            <Link href="tel:+237651327377"
+                                className=" flex-1 bg-none border border-[#dc7028] rounded-md p-2 justify-center text-md font-medium text-[#dc7028] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-[#dc7028] sm:w-full flex gap-2 items-center"
+                            >
+                                <FaPhone /> Contact seller
+                            </Link>
+
+                        </div>
+                    </form>
+
                     <div className="text-sm font-light leading-6 mt-8">
                         <p className="my-2"><span className="font-bold">Width : </span>{item.width}</p>
                         <p className="my-2"><span className="font-bold">Length : </span>{item.length}</p>

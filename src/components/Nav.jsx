@@ -1,13 +1,12 @@
 'use client'
 
-import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { MenuIcon, XIcon } from '@heroicons/react/outline'
+import { MenuIcon, XIcon, MailIcon } from '@heroicons/react/outline'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
-import { FaWhatsapp, FaPhone, FaCartShopping } from "react-icons/fa6"
-import { useSelector } from "react-redux";
+import { Fragment, useState } from 'react'
+import { FaPhone, FaWhatsapp } from "react-icons/fa6"
+import { useSelector } from "react-redux"
 
 
 export default function Nav() {
@@ -43,7 +42,7 @@ export default function Nav() {
                 name: 'Contact Us'
             },
             {
-                id: '6',
+                id: '7',
                 href: '/about',
                 name: 'About Us'
             },
@@ -126,6 +125,9 @@ export default function Nav() {
                             </Link>
                             <Link href="https://wa.me/+8615868979611"> <span className='underline flex gap-1  items-center underline-offset-2'><FaWhatsapp />  Whatsapp </span>
                             </Link>
+                            <Link rel="noopener" target="_blank" href="mailto:azemchap@gmail.com" className='underline flex gap-1  items-center underline-offset-2'>
+                                <MailIcon className="flex-shrink-0 h-5 w-5" aria-hidden="true" />Send an email
+                            </Link>
                         </div>
                         {/* <div className="ml-auto flex gap-2 items-center justify-between">
                             <Link href="/login"> <span className='  flex gap-2  items-center'> Login</span>
@@ -133,11 +135,11 @@ export default function Nav() {
                             <Link href="/register"> <span className=' flex gap-1  items-center '> Register </span>
                             </Link>
                         </div> */}
-                        <Link href={'/cart'} className="flex gap-2 items-center ml-auto">
+                        {/* <Link href={'/cart'} className="flex gap-2 items-center ml-auto">
                             <FaCartShopping />   <span className="text-xs font-bold text-gray-100 group-hover:text-gray-400 p-1 rounded px-2 bg-[#dc7028]">
                                 {loading ? "..." : cartItems.reduce((a, c) => a + c.qty, 0)}
                             </span>
-                        </Link>
+                        </Link> */}
                     </div>
                 </div>
 

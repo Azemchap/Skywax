@@ -15,7 +15,7 @@ interface Props {
     heading: string;
 }
 
-const ListGroup = ({ items, heading }: Props) => {
+const SlicedListGroup = ({ items, heading }: Props) => {
     return (
         <div className="max-w-screen-2xl mx-auto xl:px-8 mt-4 mb-24">
             <h2 className="py-4 my-4 text-lg font-semibold">{heading}</h2>
@@ -25,8 +25,7 @@ const ListGroup = ({ items, heading }: Props) => {
                 </h2>
             )}
             <div className=" grid gap-8 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
-                {items.map((item) => (
-                    
+                {items.filter(item => item.category == 'african-fabrics').map((item) => (
                     <Link
                         href={`/${item.categoryLink}/${item.id}`}
                         key={item.id}
@@ -65,4 +64,4 @@ const ListGroup = ({ items, heading }: Props) => {
     );
 };
 
-export default ListGroup;
+export default SlicedListGroup;

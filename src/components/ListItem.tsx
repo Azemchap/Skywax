@@ -58,8 +58,6 @@ const ListItem = ({ item }: Props) => {
 
                 <AddToCart item={item} redirect={true} />
 
-
-
                 <div className="border-t border-gray-200  text-gray-700 mt-8 pt-4">
                     <h2 className="text-lg font-semibold">
                         Description:

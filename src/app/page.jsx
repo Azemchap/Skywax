@@ -1,7 +1,7 @@
 
 import React from 'react'
 import Image from 'next/image'
-import ListGroup from '../components/ListGroup'
+import SlicedListGroup from '../components/SlicedListGroup'
 import { data } from '../data/data'
 
 
@@ -24,7 +24,7 @@ export default function Home() {
             We ship worldwide!
           </p>
         </div>
-        <ListGroup items={items} heading={"Newest African Fabrics"} />
+        <SlicedListGroup items={items} heading={"Newest African Fabrics"} />
       </div>
     </div>
   )

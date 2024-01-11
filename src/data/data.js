@@ -2,7 +2,7 @@ export const data = {
       items: [
             {
                   id: '1',
-                  product: 'african-fabrics',
+                  product: 'african',
                   name: "African Wax print fabric - Pink dotted patterns",
                   price: "2500",
                   stocked: true,
@@ -25,7 +25,7 @@ export const data = {
             },
             {
                   id: '2',
-                  product: 'african-fabrics',
+                  product: 'african',
                   name: "African print fabric - Blue Leaves - Polycotton",
                   price: "4000",
                   stocked: true,

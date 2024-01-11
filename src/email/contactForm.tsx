@@ -1,23 +1,16 @@
 // 'use client'
 
-import * as React from 'react';
 import {
   Body,
   Container,
-  Column,
   Head,
   Heading,
   Hr,
   Html,
-  Img,
-  Link,
   Preview,
-  Row,
-  Section,
-  Text,
+  Tailwind,
+  Text
 } from '@react-email/components';
-import { Tailwind } from '@react-email/components';
-import { useSelector } from 'react-redux';
 
 type contactFormEmailProps = {
   message: string

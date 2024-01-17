@@ -6,12 +6,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Fragment, useState } from 'react'
 import { FaPhone, FaWhatsapp } from "react-icons/fa6"
-import { useSelector } from "react-redux"
+// import { useSelector } from "react-redux"
 
 
 export default function Nav() {
     const [open, setOpen] = useState(false)
-    const { loading, cartItems } = useSelector((state) => state.cart);
+    // const { loading, cartItems } = useSelector((state) => state.cart);
 
 
     const navigation = {

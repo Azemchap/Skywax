@@ -3,13 +3,6 @@
 @tailwind utilities;
 
 
-@layer base {
-  :root {
-    --color-primary: rgb(220, 112, 40);
-    /* --color-primary: #dc7028; */
-  }
-}
-
 * {
   margin: 0;
   padding: 0;

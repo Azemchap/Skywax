@@ -1,12 +1,12 @@
 
 import Breadcrumb from '../../components/Breadcrumb'
-import AfricanFabricsGroup from '../../components/categories/AfricanFabrics'
+import ListGroup from '../../components/ListGroup'
+import { data } from '../../data/data'
 
 
 export default function AfricanFabricsPage() {
-    // let { items } = data
 
-    // items = items.filter(item => item.category == 'african-fabrics')
+    const { items } = data
 
 
     const pages = [
@@ -15,7 +15,6 @@ export default function AfricanFabricsPage() {
 
     return (
         <>
-            {/* {console.log(items.length)} */}
             <div className="max-w-screen-2xl mx-auto px-4 pt-28">
                 <Breadcrumb pages={pages} item={{
                     id: '',
@@ -23,8 +22,7 @@ export default function AfricanFabricsPage() {
                     categoryLink: '',
                     name: 'African Fabrics'
                 }} />
-                {/* <ListGroup items={items} heading={"Newest African Fabrics"} /> */}
-                <AfricanFabricsGroup  />
+                <ListGroup items={items} heading={'African Fabrics'} />
             </div>
         </>
     )

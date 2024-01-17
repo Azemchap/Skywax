@@ -1,28 +1,22 @@
 // @ts-nocheck
 'use client'
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useRouter } from 'next/navigation'
-import { addToCart } from '../redux/slices/cartSlice'
-import { ArrowRightIcon } from '@heroicons/react/outline'
-import Link from 'next/link'
 import { ArrowLeftIcon } from '@heroicons/react/solid'
-import { FaWhatsapp } from 'react-icons/fa6'
+import Link from 'next/link'
 
 
 export default function AddToCart({
   item,
   redirect = true,
 }) {
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
   // const { cartItems } = useSelector((state) => state.cart)
-  const router = useRouter()
-  const [qty, setQty] = useState(1)
+  // const router = useRouter()
+  // const [qty, setQty] = useState(1)
 
-  const addToCartHandler = () => {
-    dispatch(addToCart({ ...item, qty }))
-    if (redirect) router.push('/cart')
-  }
+  // const addToCartHandler = () => {
+  //   dispatch(addToCart({ ...item, qty }))
+  //   if (redirect) router.push('/cart')
+  // }
 
   return (
     <div>

@@ -13,19 +13,26 @@ interface Props {
         src: string;
     }[];
     heading: string;
+    slice: number;
+    filter: string;
 }
 
-const SlicedListGroup = ({ items, heading }: Props) => {
+const SlicedGroup = ({ items, heading, slice, filter }: Props) => {
     return (
         <div className="max-w-screen-2xl mx-auto xl:px-8 mt-4 mb-24">
-            <h2 className="py-4 my-4 text-lg font-semibold">{heading}</h2>
+            <div className="flex justify-between items-center">
+                <h2 className="py-4 my-4 text-lg font-semibold">{heading}</h2>
+                <Link className="text-xs underline underline-offset-2 hover:text-[#dc7028] transition-all ease-in-out duration-700"
+                    href={`/${items.filter(item => item.category == filter)[0].categoryLink}`}> See all
+                </Link>
+            </div>
             {items.length === 0 && (
                 <h2 className="p-2 py-12 text-center bg-red-50 w-full">
                     No product Found..
                 </h2>
             )}
             <div className=" grid gap-8 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
-                {items.filter(item => item.category == 'african-fabrics').map((item) => (
+                {items.filter(item => item.category == filter).slice(0, slice).map((item) => (
                     <Link
                         href={`/${item.categoryLink}/${item.id}`}
                         key={item.id}
@@ -64,4 +71,4 @@ const SlicedListGroup = ({ items, heading }: Props) => {
     );
 };
 
-export default SlicedListGroup;
+export default SlicedGroup;

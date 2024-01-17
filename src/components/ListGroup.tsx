@@ -26,7 +26,6 @@ const ListGroup = ({ items, heading }: Props) => {
             )}
             <div className=" grid gap-8 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
                 {items.map((item) => (
-                    
                     <Link
                         href={`/${item.categoryLink}/${item.id}`}
                         key={item.id}

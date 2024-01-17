@@ -1,12 +1,10 @@
-import React from 'react'
-import App from '../components/App'
-import { StoreProvider } from '../redux/StoreProvider'
-import './globals.css'
 import localFont from 'next/font/local'
 import { Toaster } from 'react-hot-toast'
+import App from '../components/App'
+// import { StoreProvider } from '../redux/StoreProvider'
+import './globals.css'
 
 
-// Font files can be co-located inside of `app`
 const inter = localFont({
   src: '../../public/font/inter.woff',
   display: 'swap',
@@ -26,12 +24,12 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.png" sizes="84x84" />
       </head>
       <body>
-        <StoreProvider>
+        {/* <StoreProvider> */}
           <App>
             {children}
             <Toaster position='top-right' />
           </App>
-        </StoreProvider>
+        {/* </StoreProvider> */}
       </body>
     </html>
   )

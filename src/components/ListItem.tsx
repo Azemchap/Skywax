@@ -128,8 +128,8 @@ const ListItem = ({ item }: Props) => {
                         }
                     </div>
 
-                    <div className='mb-12'>This product is related to the following categories: {item.subCategory.map((cat, index) => (
-                        <Link key={index} href={`/${item.categoryLink}`} className='text-[#dc7028]'>{cat}, </Link>
+                    <div className='mb-12 '>This product is related to the following categories: {item.subCategory.map((cat, index) => (
+                        <Link key={index} href={`/${item.categoryLink}`} className='text-[#dc7028] font-light'>{cat}, </Link>
                     ))}</div>
 
                 </div>

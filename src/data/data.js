@@ -118,7 +118,7 @@ export const data = {
                   price: "4000",
                   stocked: true,
                   src: "/fabrics/msedge_vpPi5Zr4wK.jpg",
-                  category: "Headwear",
+                  category: "headwear",
                   categoryLink: "headwear",
                   subCategory: [
                         "African Fabrics",
@@ -140,7 +140,7 @@ export const data = {
                   price: "4000",
                   stocked: true,
                   src: "/fabrics/msedge_vpPi5Zr4wK.jpg",
-                  category: "Headwear",
+                  category: "headwear",
                   categoryLink: "headwear",
                   subCategory: [
                         "African Fabrics",

@@ -20,10 +20,10 @@ export default function AfricanFabricsPage() {
                     id: '',
                     category: '',
                     categoryLink: '',
-                    name: 'African Fabrics'
+                    name: 'Headwears'
                 }} />
                
-                <ListGroup items={items} heading={'African Fabrics'} filter="African Fabrics" />
+                <ListGroup items={items} heading={'Headwears'} filter="headwear" />
             </div>
         </>
     )

@@ -19,12 +19,12 @@ interface Props {
 
 const SlicedGroup = ({ items, heading, slice, filter }: Props) => {
     return (
-        <div className="max-w-screen-2xl mx-auto xl:px-8 mt-4 mb-24">
+        <div className="max-w-screen-2xl mx-auto xl:px-8 mt-8 mb-12">
             <div className="flex justify-between items-center">
                 <h2 className="py-4 my-4 text-lg font-semibold">{heading}</h2>
-                <Link className="text-xs underline underline-offset-2 hover:text-[#dc7028] transition-all ease-in-out duration-700"
-                    href={`/${items.filter(item => item.category == filter)[0].categoryLink}`}> See all
-                </Link>
+                {/* <Link className="text-xs underline underline-offset-2 hover:text-[#dc7028] transition-all ease-in-out duration-700"
+                    href={`/${items.filter(item => item.category == filter)[1].categoryLink}`}> See all
+                </Link> */}
             </div>
             {items.length === 0 && (
                 <h2 className="p-2 py-12 text-center bg-red-50 w-full">

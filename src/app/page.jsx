@@ -25,7 +25,14 @@ export default function Home() {
           </p>
         </div>
 
-        <SlicedGroup items={items} heading={"Newest African Fabrics"} slice={2} filter='African Fabrics'/>
+        <section className='fabrics__section'>
+          <SlicedGroup items={items} heading={"Newest African Fabrics"} slice={4} filter='African Fabrics' />
+        </section>
+
+        <section className='headwear__section '>
+          <SlicedGroup items={items} heading={"Headwears"} slice={2} filter='headwear' />
+        </section>
+
       </div>
     </div>
   )

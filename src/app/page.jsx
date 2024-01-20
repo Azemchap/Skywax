@@ -26,11 +26,11 @@ export default function Home() {
         </div>
 
         <section className='fabrics__section'>
-          <SlicedGroup items={items} heading={"Newest African Fabrics"} slice={4} filter='African Fabrics' />
+          <SlicedGroup items={items} heading={"Newest African Fabrics"} slice={4} filter='African Fabrics' categoryLink='african-fabrics' />
         </section>
 
-        <section className='headwear__section '>
-          <SlicedGroup items={items} heading={"Headwears"} slice={2} filter='headwear' />
+        <section className='headwrap__section '>
+          <SlicedGroup items={items} heading={"African Headwraps"} slice={2} filter='headwraps' categoryLink='headwraps' />
         </section>
 
       </div>

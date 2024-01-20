@@ -23,8 +23,8 @@ export default function Nav() {
             },
             {
                 id: '2',
-                href: '/headwear',
-                name: 'HEADWEAR'
+                href: '/headwraps',
+                name: 'HEADWRAPS'
             },
             {
                 id: '3',

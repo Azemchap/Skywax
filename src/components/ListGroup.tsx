@@ -20,7 +20,7 @@ const ListGroup = ({ items, heading, filter }: Props) => {
     return (
         <div className="max-w-screen-2xl mx-auto xl:px-8 mt-4 mb-24">
             <h2 className="py-4 my-4 text-lg font-semibold">{heading}</h2>
-            <div className=" grid gap-8 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
+            <div className=" grid gap-8 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
 
                 {items.filter(item => item.category == filter).map((item) => (
                     <>
@@ -57,7 +57,7 @@ const ListGroup = ({ items, heading, filter }: Props) => {
                                 className="group-hover:scale-110 transition-all ease-in-out duration-700"
                             />
                             <div className="my-4 text-center text-xs sm:text-sm p-2">
-                                <p className=" mb-3">{item.name}</p>
+                                <p className=" mb-3 line-clamp-2">{item.name}</p>
                                 <p className=" text-[#dc7028] font-bold text-base">
                                     <span className=" text-xs font-normal">FCFA </span>{item.price}
                                 </p>

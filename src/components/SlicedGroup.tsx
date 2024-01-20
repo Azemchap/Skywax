@@ -1,5 +1,7 @@
+import { ChevronDoubleRightIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 import Link from "next/link";
+import { FaArrowRight, FaGreaterThan } from "react-icons/fa6";
 
 interface Props {
     items: {
@@ -15,9 +17,10 @@ interface Props {
     heading: string;
     slice: number;
     filter: string;
+    categoryLink: string;
 }
 
-const SlicedGroup = ({ items, heading, slice, filter }: Props) => {
+const SlicedGroup = ({ items, heading, slice, filter, categoryLink }: Props) => {
     return (
         <div className="max-w-screen-2xl mx-auto xl:px-8 mt-8 mb-12">
             <div className="flex justify-between items-center">
@@ -31,7 +34,7 @@ const SlicedGroup = ({ items, heading, slice, filter }: Props) => {
                     No product Found..
                 </h2>
             )}
-            <div className=" grid gap-8 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
+            <div className=" grid gap-8 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
                 {items.filter(item => item.category == filter).slice(0, slice).map((item) => (
                     <Link
                         href={`/${item.categoryLink}/${item.id}`}
@@ -59,7 +62,7 @@ const SlicedGroup = ({ items, heading, slice, filter }: Props) => {
                             className="group-hover:scale-110 transition-all ease-in-out duration-700"
                         />
                         <div className="my-4 text-center text-xs sm:text-sm p-2">
-                            <p className=" mb-3">{item.name}</p>
+                            <p className=" mb-3 line-clamp-2">{item.name}</p>
                             <p className=" text-[#dc7028] font-bold text-base">
                                 <span className=" text-xs font-normal">FCFA </span>{item.price}
                             </p>
@@ -67,6 +70,7 @@ const SlicedGroup = ({ items, heading, slice, filter }: Props) => {
                     </Link>
                 ))}
             </div>
+            <Link href={`/${categoryLink}`} className="inline-flex items-center gap-4 text-white text-shadow-sm my-6 p-2 px-6 rounded capitalize hover:bg-[#dc7028be] text-sm bg-[#dc7028]">view all {filter} <ChevronDoubleRightIcon className="w-4"/> </Link>
         </div>
     );
 };

@@ -26,7 +26,7 @@ export default function Home() {
         </div>
 
         <section className='fabrics__section'>
-          <SlicedGroup items={items} heading={"Newest African Fabrics"} slice={4} filter='African Fabrics' categoryLink='african-fabrics' />
+          <SlicedGroup items={items} heading={"Newest African Fabrics"} slice={5} filter='African Fabrics' categoryLink='african-fabrics' />
         </section>
 
         <section className='headwrap__section '>

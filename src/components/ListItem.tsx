@@ -91,14 +91,20 @@ const ListItem = ({ item }: Props) => {
                         </div>
                     </form>
 
+                    {
+                        (item.features ?
+                            <ul className=" text-xs text-gray-500 my-12 ">
+                                {item.features.map((feed, index) => (
+                                    <li className="flex justify-between items-start gap-4 my-4 leading-12 w-full text-base" key={index}>
+                                        <FaList className=' basis-4 text-[#dc7028a4]  mt-1' /><span className='flex-1'>{feed}</span>
+                                    </li>
+                                ))}
+                            </ul> : <></>
+                        )
+                    }
 
-                    <ul className=" text-xs text-gray-500 my-12 ">
-                        {item.features.map((feed, index) => (
-                            <li className="flex justify-between items-start gap-4 my-4 leading-12 w-full text-base" key={index}>
-                                <FaList className=' basis-4 text-[#dc7028a4]  mt-1' /><span className='flex-1'>{feed}</span>
-                            </li>
-                        ))}
-                    </ul>
+
+
 
 
                     <div className="text-sm font-light leading-6 my-8">

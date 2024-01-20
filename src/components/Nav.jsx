@@ -120,7 +120,7 @@ export default function Nav() {
                         <h2 className='hidden lg:flex gap-1 mr-auto'> <span className='font-bold'>Welcome to SKYWAX! </span> We offer fast worldwide shipping. </h2>
 
 
-                        <div className="flex sm:ml-auto gap-6 items-center justify-between">
+                        <div className="flex ml-auto gap-6 items-center justify-between">
                             <Link rel="noopener" target="_blank" href="tel:+8615868979611"> <span className='underline underline-offset-2 flex gap-2  items-center'> <FaPhone /> Phone</span>
                             </Link>
                             <Link href="https://wa.me/+8615868979611"> <span className='underline flex gap-1  items-center underline-offset-2'><FaWhatsapp />  Whatsapp </span>

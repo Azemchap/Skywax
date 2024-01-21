@@ -126,7 +126,7 @@ export default function Nav() {
                             <Link href="https://wa.me/+8615868979611"> <span className='underline flex gap-1  items-center underline-offset-2'><FaWhatsapp />  Whatsapp </span>
                             </Link>
                             <Link rel="noopener" target="_blank" href="mailto:azemchap@gmail.com" className='underline flex gap-1  items-center underline-offset-2'>
-                                <MailIcon className="flex-shrink-0 h-5 w-5" aria-hidden="true" />Send an email
+                                <MailIcon className="flex-shrink-0 h-5 w-5" aria-hidden="true" />Send Mail
                             </Link>
                         </div>
                         {/* <div className="ml-auto flex gap-2 items-center justify-between">

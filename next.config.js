@@ -29,9 +29,6 @@ const nextConfig = {
         // remotePatterns: [],
         // // when true, every image will be unoptimized
         // unoptimized: false,
-    },
-    experimental: {
-        serverActions: true,
     }
 }
 

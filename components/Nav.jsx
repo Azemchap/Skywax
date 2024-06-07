@@ -104,6 +104,8 @@ export default function Nav() {
                 {/* Top navigation  */}
                 <div className="top-header  bg-gray-900 ">
                     <div className="max-w-screen-2xl mx-auto h-10 flex gap-8 md:gap-12 items-center  text-sm font-regular text-white px-8 ">
+                        
+
                         <h2 className='hidden lg:flex gap-1 mr-auto'> <span className='font-bold'>Welcome to SKYWAX! </span> We offer fast worldwide shipping. </h2>
 
 
@@ -115,6 +117,7 @@ export default function Nav() {
                             <Link rel="noopener" target="_blank" href="mailto:azemchap@gmail.com" className='underline flex gap-1  items-center underline-offset-2'>
                                 <MailIcon className="flex-shrink-0 h-5 w-5" aria-hidden="true" />Mail
                             </Link>
+
                         </div>
                     </div>
                 </div>
@@ -142,6 +145,7 @@ export default function Nav() {
                                         </div>
                                     ))}
                                 </div>
+
 
                                 <button
                                     type="button"

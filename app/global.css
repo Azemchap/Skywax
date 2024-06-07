@@ -15,6 +15,10 @@ img {
     object-fit: cover;
 }
 
+input {
+    padding: 8px;
+}
+
 
 @layer base {
     :root {
@@ -61,4 +65,6 @@ img {
         --input: 12 6.5% 15.1%;
         --ring: 20.5 90.2% 48.2%;
     }
+
+   
 }

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+import { ModeToggle } from './ModeToggle'
 
 const information = {
     title: "Information",
@@ -78,7 +79,7 @@ const shipping = {
 
 export default function Footer() {
     return (
-        <footer className="bg-gray-900 ">
+        <footer className="bg-foreground dark:bg-black ">
             <div className="max-w-screen-2xl mx-auto py-24 px-8 overflow-hidden sm:px-6 lg:px-8">
                 <nav className="sm:grid grid-cols-2 lg:grid-cols-4 mb-20">
                     <div className="py-2 mb-10">
@@ -109,20 +110,25 @@ export default function Footer() {
                         <h2 className='font-bold text-lg text-gray-50 '>Newsletter</h2>
                         <p className="text-sm mb-8 text-gray-500">Sign up for the latest news, offers and styles</p>
                         <form action="" className="form flex flex-col gap-2">
-                            <input type="email" name="" id="" className='rounded' placeholder='Your email' />
+                            <input type="email" name="" id="" className='rounded dark:bg-primary-foreground' placeholder='Your email' />
                             <input type="submit" value="Subscribe" className='rounded bg-[#dc7028] text-sm text-gray-100 px-6 py-2' />
                         </form>
                     </div>
                 </nav>
-                <div className="mt-16 flex justify-center space-x-6">
-                    {information.social.map((item) => (
-                        <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-50">
-                            <span className="sr-only">{item.name}</span>
-                            <item.icon className="h-6 w-6" aria-hidden="true" />
-                        </a>
-                    ))}
+                <div className="mt-16 flex justify-between space-x-6">
+                    <div className="flex justify-center gap-4">
+                        {information.social.map((item) => (
+                            <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-50">
+                                <span className="sr-only">{item.name}</span>
+                                <item.icon className="h-6 w-6" aria-hidden="true" />
+                            </a>
+                        ))}
+                    </div>
+
+                    <ModeToggle className='w-40 p-20' />
                 </div>
-                <p className="mt-8 text-center text-sm text-gray-300">Copyright &copy; {new Date().getFullYear()}, SKYWAX - All rights reserved.</p>
+                <p className="mt-8 sm:text-center text-sm text-gray-300">Copyright &copy; {new Date().getFullYear()}, SKYWAX - All rights reserved.</p>
+
             </div>
         </footer>
     )

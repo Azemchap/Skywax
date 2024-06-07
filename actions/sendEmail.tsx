@@ -1,6 +1,6 @@
 "use server";
 import { Resend } from 'resend'
-import { getErrorMessage, validString } from '../lib/utils';
+import { getErrorMessage, validString } from '../@/lib/utils';
 import ContactForm from '../email/contactForm';
 import { CreateEmailResponse } from 'resend/build/src/emails/interfaces';
 

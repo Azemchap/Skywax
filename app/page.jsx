@@ -33,6 +33,8 @@ export default function Home() {
           <SlicedGroup items={items} heading={"African Headwraps"} slice={6} filter='headwraps' categoryLink='headwraps' />
         </section>
 
+
+
       </div>
     </div>
   )

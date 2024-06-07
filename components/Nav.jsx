@@ -37,7 +37,7 @@ export default function Nav() {
     }
 
     return (
-        <div className="bg-primary fixed top-0 left-0 right-0 z-40">
+        <div className="bg-background fixed top-0 left-0 right-0 z-40">
             {/* Mobile menu */}
             <Transition.Root show={open} as={Fragment}>
                 <Dialog as="div" className="fixed inset-0 flex z-40 lg:hidden" onClose={setOpen}>
@@ -100,7 +100,7 @@ export default function Nav() {
                 </Dialog>
             </Transition.Root>
 
-            <header className="relative bg-gray-50">
+            <header className="relative bg-background">
                 {/* Top navigation  */}
                 <div className="top-header  bg-gray-900 ">
                     <div className="max-w-screen-2xl mx-auto h-10 flex gap-8 md:gap-12 items-center  text-sm font-regular text-white px-8 ">

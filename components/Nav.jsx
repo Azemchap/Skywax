@@ -13,16 +13,7 @@ export default function Nav() {
 
     const navigation = {
         links: [
-            {
-                id: '1',
-                href: '/african-fabrics',
-                name: 'AFRICAN FABRICS'
-            },
-            {
-                id: '2',
-                href: '/headwraps',
-                name: 'HEADWRAPS'
-            },
+          
             {
                 id: '6',
                 href: '/contact',

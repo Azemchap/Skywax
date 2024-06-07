@@ -30,9 +30,7 @@ async function getProduct() {
     "currentSlug": slug.current,
     
 }`
-
   const data = await client.fetch(query)
-
   return data
 }
 
@@ -42,18 +40,9 @@ export default async function Home() {
   const products: ProductCard[] = await getProduct()
   const category: Category[] = await getCategory()
 
-  const categoryNames = category.map(category => category.title);
+  // const categoryNames = category.map(category => category.title);
+  // const categorySlug = category.map(category => category.currentSlug);
 
-  const item = categoryNames.map(item => {
-    return item
-  });
-
-
-
-
-  const categorySlug = category.map(category => category.currentSlug);
-
-  console.log(item)
 
 
 
@@ -80,7 +69,7 @@ export default async function Home() {
             <div className=" grid gap-8 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6">
               {products.map((product) => (
                 <Link
-                  href={`${categorySlug}/${product.currentSlug}`}
+                  href={`/product/${product.currentSlug}`}
                   key={product.currentSlug}
                   className="relative text-gray-60 cursor-pointer group  overflow-hidden"
                 >

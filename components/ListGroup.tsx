@@ -38,8 +38,8 @@ const ListGroup = ({ items, heading, filter }: Props) => {
                                 className="group-hover:scale-110 transition-all ease-in-out duration-700"
                             />
                             <div className="my-4 text-center text-xs sm:text-sm p-2">
-                                <p className=" mb-3 line-clamp-2">{item.name}</p>
-                                <p className=" text-[#dc7028] font-bold text-base">
+                                <p className=" mb-3 line-clamp-2  dark:text-primary ">{item.name}</p>
+                                <p className="  font-bold text-base">
                                     <span className=" text-xs font-normal">FCFA </span>{item.price}
                                 </p>
                             </div>

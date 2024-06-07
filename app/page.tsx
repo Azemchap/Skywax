@@ -64,7 +64,7 @@ export default async function Home() {
         </div>
 
         <section className='fabrics__section'>
-          <div className="container mx-auto xl:px-8 mt-8 mb-12">
+          <div className="container mx-auto xl:px-8 mt-8 pb-24">
             <div className="flex justify-between items-center">
               <h2 className="py-4 my-4 text-lg font-semibold">All products</h2>
             </div>
@@ -84,7 +84,7 @@ export default async function Home() {
                     className="group-hover:scale-110 transition-all ease-in-out duration-700"
                   />
                   <div className="my-4 text-center text-xs sm:text-sm p-2">
-                    <p className=" mb-3 line-clamp-2">{product.name}</p>
+                    <p className=" mb-3 line-clamp-2 dark:text-foreground">{product.name}</p>
                     <p className=" text-[#dc7028] font-bold text-base">
                       <span className=" text-xs font-normal"></span> {formatCurrency(product.price)}
                     </p>

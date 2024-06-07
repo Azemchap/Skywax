@@ -40,7 +40,7 @@ export default async function ProductDetailsPage({ params }: { params: { slug: s
     // ]
 
     return (
-        <div className="max-w-screen-2xl mx-auto px-4 pt-28">
+        <div className="max-w-screen-2xl mx-auto px-4 pt-28 ">
             {/* <Breadcrumb pages={pages} item={item} /> */}
          
             <ListItem product={product} />

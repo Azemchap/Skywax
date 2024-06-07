@@ -6,6 +6,8 @@ import { Category, ProductCard } from './lib/interface'
 import { client, urlFor } from './lib/sanity'
 import { formatCurrency, formatNumber } from "../@/lib/utils"
 
+export const revalidate = 30
+
 async function getCategory() {
   const query = `
   *[_type == 'category'] | order(_createdAt desc) {

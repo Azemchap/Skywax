@@ -6,6 +6,9 @@ import { ProductItem } from '../app/lib/interface';
 import { urlFor } from '../app/lib/sanity';
 import { formatCurrency } from '../@/lib/utils';
 
+export const revalidate = 30
+
+
 
 interface Props {
     product: ProductItem

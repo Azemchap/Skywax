@@ -4,6 +4,10 @@ import ListItem from "../../../components/ListItem";
 import { ProductItem } from "../../lib/interface";
 import { client } from "../../lib/sanity";
 
+
+export const revalidate = 30
+
+
 async function getProductDetails(slug: string) {
     const query = `
      *[_type == 'product' && slug.current == '${slug}' ] {
